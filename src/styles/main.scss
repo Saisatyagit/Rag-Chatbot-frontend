@@ -1,0 +1,106 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f1f3f5;
+  color: #212529;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Scrollbar for the entire page */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #adb5bd;
+  border-radius: 3px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Buttons (shared style) */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.2s;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+/* Links */
+a {
+  color: #0d6efd;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* News Widget styling */
+.news-widget {
+  width: 100%;
+  max-width: 450px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  padding: 15px;
+  margin-bottom: 20px;
+
+  h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    li a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: #f8f9fa;
+      font-size: 14px;
+      transition: all 0.2s;
+      &:hover {
+        background: #e9ecef;
+      }
+    }
+  }
+
+  p {
+    font-size: 14px;
+    color: #6c757d;
+  }
+}
+
+/* Responsive for small screens */
+@media (max-width: 500px) {
+  body {
+    padding: 10px;
+  }
+
+  .chat-container, .news-widget {
+    max-width: 100%;
+  }
+}
