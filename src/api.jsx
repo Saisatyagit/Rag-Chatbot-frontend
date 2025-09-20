@@ -1,7 +1,11 @@
 import axios from "axios";
 
-// Read from environment variable, fallback to default if not set
-const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+// Detect environment and use correct API URL
+const BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.MODE === "production"
+    ? "https://rag-chatbot-backend.vercel.app/api" // live backend URL
+    : "http://localhost:5000/api"); // local backend URL
 
 export const sendMessage = (sessionId, message) =>
   axios.post(`${BASE_URL}/chat/send/${sessionId}`, { message });
